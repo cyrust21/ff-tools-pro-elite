@@ -22,7 +22,7 @@ const Navigation = () => {
             <div className="w-8 h-8 bg-gaming-gradient rounded-lg flex items-center justify-center">
               <Target className="w-5 h-5 text-white" />
             </div>
-            <span className="text-xl font-bold text-gradient">FF TOOLS PRO</span>
+            <span className="text-xl font-bold text-gradient">FFToolsPro+</span>
           </div>
 
           {/* Desktop Navigation */}
