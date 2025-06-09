@@ -1,24 +1,641 @@
+
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ff-tools-pro-elite</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FFToolsPro+ - Solusi Ultimate Gaming Free Fire</title>
+    <meta name="description" content="FFToolsPro+ - Aplikasi all-in-one untuk meningkatkan performa gaming Free Fire dengan fitur Game Booster, AI Performance Mode, Custom Crosshair, dan banyak lagi!">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom CSS -->
+    <style>
+        /* Gaming Theme Colors */
+        :root {
+            --gaming-primary: #00d4ff;
+            --gaming-secondary: #7c3aed;
+            --gaming-accent: #f59e0b;
+            --gaming-dark: #0f0f23;
+            --gaming-darker: #070716;
+        }
 
-    <meta property="og:title" content="ff-tools-pro-elite" />
-    <meta property="og:description" content="Lovable Generated Project" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+        body {
+            background: linear-gradient(135deg, #0f0f23 0%, #070716 100%);
+            min-height: 100vh;
+            font-family: 'Inter', sans-serif;
+        }
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-  </head>
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(15, 15, 35, 0.7);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+        }
 
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+        .gaming-card {
+            backdrop-filter: blur(10px);
+            background: rgba(15, 15, 35, 0.7);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 12px;
+            padding: 24px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 32px rgba(0, 212, 255, 0.1);
+        }
+
+        .gaming-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 40px rgba(0, 212, 255, 0.3);
+            border-color: rgba(0, 212, 255, 0.4);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #00d4ff 0%, #7c3aed 50%, #f59e0b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .gaming-gradient {
+            background: linear-gradient(135deg, #00d4ff 0%, #7c3aed 100%);
+        }
+
+        .btn-gaming {
+            background: linear-gradient(135deg, #00d4ff 0%, #7c3aed 100%);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-gaming:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 212, 255, 0.5);
+        }
+
+        .feature-gradient-1 { background: linear-gradient(135deg, #3b82f6, #06b6d4); }
+        .feature-gradient-2 { background: linear-gradient(135deg, #8b5cf6, #ec4899); }
+        .feature-gradient-3 { background: linear-gradient(135deg, #10b981, #059669); }
+        .feature-gradient-4 { background: linear-gradient(135deg, #f59e0b, #eab308); }
+        .feature-gradient-5 { background: linear-gradient(135deg, #ef4444, #ec4899); }
+        .feature-gradient-6 { background: linear-gradient(135deg, #6366f1, #8b5cf6); }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-effect">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 gaming-gradient rounded-lg flex items-center justify-center">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="10"/>
+                            <circle cx="12" cy="12" r="4"/>
+                        </svg>
+                    </div>
+                    <span class="text-xl font-bold text-gradient">FFToolsPro+</span>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="flex items-center space-x-2 text-gray-300 hover:text-blue-400 transition-colors">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        </svg>
+                        <span>Home</span>
+                    </a>
+                    <a href="#features" class="flex items-center space-x-2 text-gray-300 hover:text-blue-400 transition-colors">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="10"/>
+                            <circle cx="12" cy="12" r="4"/>
+                        </svg>
+                        <span>Fitur</span>
+                    </a>
+                    <a href="#download" class="flex items-center space-x-2 text-gray-300 hover:text-blue-400 transition-colors">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7,10 12,15 17,10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                        <span>Download</span>
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="mobile-menu md:hidden py-4 border-t border-gray-700">
+                <div class="flex flex-col space-y-4">
+                    <a href="#home" class="flex items-center space-x-2 text-gray-300 hover:text-blue-400 transition-colors">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        </svg>
+                        <span>Home</span>
+                    </a>
+                    <a href="#features" class="flex items-center space-x-2 text-gray-300 hover:text-blue-400 transition-colors">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="10"/>
+                            <circle cx="12" cy="12" r="4"/>
+                        </svg>
+                        <span>Fitur</span>
+                    </a>
+                    <a href="#download" class="flex items-center space-x-2 text-gray-300 hover:text-blue-400 transition-colors">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7,10 12,15 17,10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                        <span>Download</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-20 pb-16 relative overflow-hidden">
+        <div class="absolute inset-0 gaming-gradient opacity-10"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center py-20">
+                <div class="inline-block mb-6 px-4 py-2 bg-blue-500/20 text-blue-400 border border-blue-500/30 rounded-full">
+                    🔥 Solusi Ultimate untuk Gaming Free Fire Terbaik!
+                </div>
+                
+                <h1 class="text-5xl md:text-7xl font-bold mb-6">
+                    <span class="text-gradient">FFToolsPro+</span>
+                    <br />
+                    <span class="text-white">ALL-IN-ONE</span>
+                </h1>
+                
+                <p class="text-xl text-gray-300 mb-4 max-w-3xl mx-auto">
+                    Aplikasi all-in-one yang dirancang khusus untuk meningkatkan performa dan kenyamanan 
+                    saat bermain Free Fire dan Free Fire MAX.
+                </p>
+                
+                <p class="text-lg text-blue-400 mb-8 max-w-2xl mx-auto font-semibold">
+                    🎮 Lebih dari sekadar tools, ini adalah senjata rahasia player pro!
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+                    <button class="btn-gaming">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <polygon points="13,2 3,14 12,14 11,22 21,10 12,10"/>
+                        </svg>
+                        Download FFToolsPro+
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <line x1="5" y1="12" x2="19" y2="12"/>
+                            <polyline points="12,5 19,12 12,19"/>
+                        </svg>
+                    </button>
+                    
+                    <button class="border border-blue-500/30 text-blue-400 hover:bg-blue-500/10 px-6 py-3 rounded-lg font-semibold transition-all flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="10"/>
+                            <circle cx="12" cy="12" r="4"/>
+                        </svg>
+                        Lihat Fitur Lengkap
+                    </button>
+                </div>
+
+                <!-- Stats -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+                    <div class="gaming-card text-center">
+                        <div class="flex flex-col items-center space-y-2">
+                            <svg class="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                            </svg>
+                            <div class="text-2xl font-bold text-white">50K+</div>
+                            <div class="text-sm text-gray-400">Active Users</div>
+                        </div>
+                    </div>
+                    <div class="gaming-card text-center">
+                        <div class="flex flex-col items-center space-y-2">
+                            <svg class="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <polygon points="13,2 3,14 12,14 11,22 21,10 12,10"/>
+                            </svg>
+                            <div class="text-2xl font-bold text-white">+60%</div>
+                            <div class="text-sm text-gray-400">Performance Boost</div>
+                        </div>
+                    </div>
+                    <div class="gaming-card text-center">
+                        <div class="flex flex-col items-center space-y-2">
+                            <svg class="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="3"/>
+                                <path d="M19.4,15a1.65,1.65,0,0,0,.33,1.82l.06.06a2,2,0,0,1,0,2.83,2,2,0,0,1-2.83,0l-.06-.06a1.65,1.65,0,0,0-1.82-.33,1.65,1.65,0,0,0-1,1.51V21a2,2,0,0,1-2,2,2,2,0,0,1-2-2v-.09A1.65,1.65,0,0,0,9,19.4a1.65,1.65,0,0,0-1.82.33l-.06.06a2,2,0,0,1-2.83,0,2,2,0,0,1,0-2.83l.06-.06a1.65,1.65,0,0,0,.33-1.82,1.65,1.65,0,0,0-1.51-1H3a2,2,0,0,1-2-2,2,2,0,0,1,2-2h.09A1.65,1.65,0,0,0,4.6,9a1.65,1.65,0,0,0-.33-1.82L4.21,7.1a2,2,0,0,1,0-2.83,2,2,0,0,1,2.83,0L7.1,4.33a1.65,1.65,0,0,0,1.82.33,1.65,1.65,0,0,0,1-1.51V3a2,2,0,0,1,2-2,2,2,0,0,1,2,2v.09a1.65,1.65,0,0,0,1,1.51,1.65,1.65,0,0,0,1.82-.33l.06-.06a2,2,0,0,1,2.83,0,2,2,0,0,1,0,2.83l-.06.06a1.65,1.65,0,0,0-.33,1.82,1.65,1.65,0,0,0,1.51,1H21a2,2,0,0,1,2,2,2,2,0,0,1-2,2h-.09A1.65,1.65,0,0,0,19.4,15Z"/>
+                            </svg>
+                            <div class="text-2xl font-bold text-white">15+</div>
+                            <div class="text-sm text-gray-400">Tools Available</div>
+                        </div>
+                    </div>
+                    <div class="gaming-card text-center">
+                        <div class="flex flex-col items-center space-y-2">
+                            <svg class="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path d="M6,9H4.5a2.5,2.5,0,0,1,0-5H6"/>
+                                <path d="M14,9h1.5a2.5,2.5,0,0,1,0,5H14"/>
+                                <path d="M6,9v6"/>
+                                <path d="M14,9v6"/>
+                            </svg>
+                            <div class="text-2xl font-bold text-white">99%</div>
+                            <div class="text-sm text-gray-400">Success Rate</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section-padding relative">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gradient mb-4">🔧 Fitur Unggulan</h2>
+                <p class="text-gray-300 text-lg">
+                    Fitur-fitur canggih dengan tampilan antarmuka yang ramah pengguna
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Game Booster Pro -->
+                <div class="gaming-card group cursor-pointer h-full">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-lg feature-gradient-1 p-3 group-hover:scale-110 transition-transform duration-300">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <polygon points="13,2 3,14 12,14 11,22 21,10 12,10"/>
+                            </svg>
+                        </div>
+                        
+                        <h3 class="text-xl font-semibold text-white group-hover:text-blue-400 transition-colors">
+                            Game Booster Pro
+                        </h3>
+                        
+                        <p class="text-gray-300">
+                            Optimalkan CPU & GPU secara real-time untuk pengalaman bermain tanpa lag
+                        </p>
+                        
+                        <div class="flex items-center text-blue-400 group-hover:translate-x-2 transition-transform">
+                            <span class="text-sm font-medium mr-2">Coba Sekarang</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <line x1="5" y1="12" x2="19" y2="12"/>
+                                <polyline points="12,5 19,12 12,19"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Performance Mode -->
+                <div class="gaming-card group cursor-pointer h-full">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-lg feature-gradient-2 p-3 group-hover:scale-110 transition-transform duration-300">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path d="M9.5,3A6.5,6.5,0,0,1,16,9.5c0,1.61-.59,3.09-1.56,4.23l.27.27h.79l5,5-1.5,1.5-5-5v-.79l-.27-.27A6.516,6.516,0,0,1,9.5,16,6.5,6.5,0,1,1,9.5,3m0,2A4.5,4.5,0,1,0,14,9.5,4.5,4.5,0,0,0,9.5,5Z"/>
+                            </svg>
+                        </div>
+                        
+                        <h3 class="text-xl font-semibold text-white group-hover:text-blue-400 transition-colors">
+                            AI Performance Mode
+                        </h3>
+                        
+                        <p class="text-gray-300">
+                            Deteksi otomatis game Free Fire dan aktifkan mode performa tinggi secara cerdas
+                        </p>
+                        
+                        <div class="flex items-center text-blue-400 group-hover:translate-x-2 transition-transform">
+                            <span class="text-sm font-medium mr-2">Coba Sekarang</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <line x1="5" y1="12" x2="19" y2="12"/>
+                                <polyline points="12,5 19,12 12,19"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Custom Crosshair Overlay -->
+                <div class="gaming-card group cursor-pointer h-full">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-lg feature-gradient-3 p-3 group-hover:scale-110 transition-transform duration-300">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="10"/>
+                                <circle cx="12" cy="12" r="4"/>
+                            </svg>
+                        </div>
+                        
+                        <h3 class="text-xl font-semibold text-white group-hover:text-blue-400 transition-colors">
+                            Custom Crosshair Overlay
+                        </h3>
+                        
+                        <p class="text-gray-300">
+                            Tambahkan crosshair ke layar dengan berbagai gaya, warna, dan ukuran yang bisa disesuaikan
+                        </p>
+                        
+                        <div class="flex items-center text-blue-400 group-hover:translate-x-2 transition-transform">
+                            <span class="text-sm font-medium mr-2">Coba Sekarang</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <line x1="5" y1="12" x2="19" y2="12"/>
+                                <polyline points="12,5 19,12 12,19"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Block Notification & Auto Clear RAM -->
+                <div class="gaming-card group cursor-pointer h-full">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-lg feature-gradient-4 p-3 group-hover:scale-110 transition-transform duration-300">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,7C13.4,7 14.8,8.6 14.8,10V11H16V17H8V11H9.2V10C9.2,8.6 10.6,7 12,7M12,8.2C11.2,8.2 10.4,8.7 10.4,10V11H13.6V10C13.6,8.7 12.8,8.2 12,8.2Z"/>
+                            </svg>
+                        </div>
+                        
+                        <h3 class="text-xl font-semibold text-white group-hover:text-blue-400 transition-colors">
+                            Block Notification & Auto Clear RAM
+                        </h3>
+                        
+                        <p class="text-gray-300">
+                            Hilangkan notifikasi mengganggu dan bersihkan RAM otomatis saat bermain
+                        </p>
+                        
+                        <div class="flex items-center text-blue-400 group-hover:translate-x-2 transition-transform">
+                            <span class="text-sm font-medium mr-2">Coba Sekarang</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <line x1="5" y1="12" x2="19" y2="12"/>
+                                <polyline points="12,5 19,12 12,19"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FPS & Hardware Monitor -->
+                <div class="gaming-card group cursor-pointer h-full">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-lg feature-gradient-5 p-3 group-hover:scale-110 transition-transform duration-300">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                                <line x1="8" y1="21" x2="16" y2="21"/>
+                                <line x1="12" y1="17" x2="12" y2="21"/>
+                            </svg>
+                        </div>
+                        
+                        <h3 class="text-xl font-semibold text-white group-hover:text-blue-400 transition-colors">
+                            FPS & Hardware Monitor
+                        </h3>
+                        
+                        <p class="text-gray-300">
+                            Pantau FPS, penggunaan CPU, memori, dan suhu perangkat saat game berjalan
+                        </p>
+                        
+                        <div class="flex items-center text-blue-400 group-hover:translate-x-2 transition-transform">
+                            <span class="text-sm font-medium mr-2">Coba Sekarang</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <line x1="5" y1="12" x2="19" y2="12"/>
+                                <polyline points="12,5 19,12 12,19"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- File Injector & Asset Tools -->
+                <div class="gaming-card group cursor-pointer h-full">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-lg feature-gradient-6 p-3 group-hover:scale-110 transition-transform duration-300">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+                            </svg>
+                        </div>
+                        
+                        <h3 class="text-xl font-semibold text-white group-hover:text-blue-400 transition-colors">
+                            File Injector & Asset Tools
+                        </h3>
+                        
+                        <p class="text-gray-300">
+                            Pindahkan atau injeksi file penting ke folder data Free Fire tanpa root (via Shizuku)
+                        </p>
+                        
+                        <div class="flex items-center text-blue-400 group-hover:translate-x-2 transition-transform">
+                            <span class="text-sm font-medium mr-2">Coba Sekarang</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <line x1="5" y1="12" x2="19" y2="12"/>
+                                <polyline points="12,5 19,12 12,19"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advantages Section -->
+    <section class="section-padding bg-gray-900/50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gradient mb-4">🌟 Keunggulan FFToolsPro+</h2>
+                <p class="text-gray-300 text-lg">
+                    Mengapa FFToolsPro+ menjadi pilihan utama para gamer Free Fire
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                <div class="gaming-card">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-10 h-10 bg-blue-500/20 rounded-full flex items-center justify-center">
+                            <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                            </svg>
+                        </div>
+                        <p class="text-white font-medium">Ringan dan cepat, tanpa iklan yang mengganggu</p>
+                    </div>
+                </div>
+                <div class="gaming-card">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-10 h-10 bg-blue-500/20 rounded-full flex items-center justify-center">
+                            <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                            </svg>
+                        </div>
+                        <p class="text-white font-medium">Desain modern dan responsif</p>
+                    </div>
+                </div>
+                <div class="gaming-card">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-10 h-10 bg-blue-500/20 rounded-full flex items-center justify-center">
+                            <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                            </svg>
+                        </div>
+                        <p class="text-white font-medium">Update rutin dan dukungan pengguna aktif</p>
+                    </div>
+                </div>
+                <div class="gaming-card">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-10 h-10 bg-blue-500/20 rounded-full flex items-center justify-center">
+                            <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                            </svg>
+                        </div>
+                        <p class="text-white font-medium">Safe & No-Root Required - Semua fitur dapat digunakan tanpa akses root</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <div class="gaming-card inline-block">
+                    <div class="px-8 py-6">
+                        <h3 class="text-2xl font-bold text-gradient mb-2">
+                            Cocok untuk kamu yang ingin performa maksimal!
+                        </h3>
+                        <p class="text-gray-300">
+                            Saat mabar, push rank, atau sekadar menikmati permainan dengan lebih lancar
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="section-padding">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <h2 class="text-4xl font-bold text-gradient mb-6">📱 Download FFToolsPro+</h2>
+                <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                    Siap untuk meningkatkan pengalaman gaming Free Fire Anda? Download sekarang dan rasakan perbedaannya!
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-6 justify-center items-center max-w-md mx-auto">
+                    <button class="btn-gaming w-full sm:w-auto">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7,10 12,15 17,10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                        Download APK
+                    </button>
+                    
+                    <div class="text-center">
+                        <div class="text-sm text-gray-400 mb-1">Latest Version</div>
+                        <div class="text-lg font-bold text-blue-400">v2.1.0</div>
+                    </div>
+                </div>
+
+                <div class="mt-8 text-center">
+                    <p class="text-gray-400 text-sm">
+                        📱 Compatible with Android 7.0+ | 📦 Size: 12MB | ⭐ No Root Required
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-gray-700/50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="flex items-center space-x-2 mb-4 md:mb-0">
+                    <div class="w-8 h-8 gaming-gradient rounded-lg flex items-center justify-center">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="10"/>
+                            <circle cx="12" cy="12" r="4"/>
+                        </svg>
+                    </div>
+                    <span class="text-xl font-bold text-gradient">FFToolsPro+</span>
+                </div>
+                
+                <div class="text-center md:text-right">
+                    <p class="text-gray-400">
+                        © 2024 FFToolsPro+ Ultimate Gaming Suite. Dibuat dengan ❤️ untuk FF Community
+                    </p>
+                    <p class="text-sm text-gray-500 mt-1">
+                        Booyah! 🔥 Keep grinding, keep winning!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on links
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to navbar
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.background = 'rgba(15, 15, 35, 0.9)';
+            } else {
+                nav.style.background = 'rgba(15, 15, 35, 0.7)';
+            }
+        });
+    </script>
+</body>
 </html>
