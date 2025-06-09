@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,13 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				gaming: {
+					primary: '#00d4ff',
+					secondary: '#7c3aed',
+					accent: '#f59e0b',
+					dark: '#0f0f23',
+					darker: '#070716'
 				}
 			},
 			borderRadius: {
@@ -84,11 +92,25 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0px)' },
+					'50%': { transform: 'translateY(-10px)' }
+				},
+				'glow': {
+					'0%, 100%': { boxShadow: '0 0 20px rgba(0, 212, 255, 0.3)' },
+					'50%': { boxShadow: '0 0 30px rgba(0, 212, 255, 0.6)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'float': 'float 3s ease-in-out infinite',
+				'glow': 'glow 2s ease-in-out infinite'
+			},
+			backgroundImage: {
+				'gaming-gradient': 'linear-gradient(135deg, #00d4ff 0%, #7c3aed 50%, #f59e0b 100%)',
+				'card-gradient': 'linear-gradient(145deg, rgba(15, 15, 35, 0.8) 0%, rgba(124, 58, 237, 0.1) 100%)'
 			}
 		}
 	},
